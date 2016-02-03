@@ -1,10 +1,10 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/samsung/zeroflte/BoardConfigVendor.mk
+-include vendor/samsung/zerolte/BoardConfigVendor.mk
 
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := zeroflte
+TARGET_BOOTLOADER_BOARD_NAME := zerolte
 
 # Platform
 
@@ -34,7 +34,7 @@ TARGET_2ND_CPU_VARIANT := generic
 BOARD_KERNEL_CMDLINE := 
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset  0x01000000 --dt device/samsung/zeroflte/dtb --tags_offset 0x0000100
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset  0x01000000 --dt device/samsung/zerolte/dtb --tags_offset 0x0000100
 BOARD_KERNEL_SEPARATED_DT := true
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x360000000
@@ -44,17 +44,18 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x130000000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+TARGET_RECOVERY_INITRC := device/samsung/zerolte/init.rc
 
 # Kernel Configs
-#TARGET_KERNEL_SOURCE := kernel/samsung/zeroflte
-#TARGET_KERNEL_CONFIG := exynos7420-zeroflte_tmo_defconfig
+#TARGET_KERNEL_SOURCE := kernel/samsung/zerolte
+#TARGET_KERNEL_CONFIG := exynos7420-zerolte_tmo_defconfig
 #TARGET_KERNEL_SELINUX_CONFIG := 
 #TARGET_KERNEL_VARIANT_CONFIG :=
 #VARIANT_CONFIG :=
 #TIMA_DEFCONFIG :=
-TARGET_PREBUILT_KERNEL := device/samsung/zeroflte/kernAl
+TARGET_PREBUILT_KERNEL := device/samsung/zerolte/kernAl
 
-BOARD_NEEDS_LZMA_MINIGZIP := true
+#BOARD_NEEDS_LZMA_MINIGZIP := true
 
 #TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
 
@@ -78,7 +79,7 @@ TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_MTP_DEVICE := /dev/usb_mtp_gadget
-#TW_INCLUDE_CRYPTO := true
-TW_DISABLE_TTF := true
-TW_EXCLUDE_SUPERSU := true
+TW_INCLUDE_CRYPTO := true
 TW_SCREEN_BLANK_ON_BOOT := true
+TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
+
