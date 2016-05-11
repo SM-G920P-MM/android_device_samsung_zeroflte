@@ -53,19 +53,20 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_CUSTOM_BOOTIMG_MK :=  device/samsung/zeroflte/bootimg.mk
 
+TARGET_RECOVERY_INITRC := device/samsung/zeroflte/init.rc
+
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/15400000.usb/15400000.dwc3/gadget/lun%d/file"
 TW_BRIGHTNESS_PATH := "/sys/devices/13900000.dsim/backlight/panel/brightness"
 TW_MAX_BRIGHTNESS := 255
-TW_DEFAULT_BRIGHTNESS := 162
-TW_NO_USB_STORAGE := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
+TW_NO_USB_STORAGE := true
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+TW_MTP_DEVICE := /dev/mtp_usb
 TW_INCLUDE_CRYPTO := true
-#TW_INCLUDE_CRYPTO_SAMSUNG := true
-TW_NO_EXFAT_FUSE := true
-TW_MTP_DEVICE := "/dev/mtp_usb"
+TW_SCREEN_BLANK_ON_BOOT := true
